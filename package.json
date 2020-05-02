@@ -1,0 +1,22 @@
+{
+  "name": "medooze-streamer-demo",
+  "version": "1.0.0",
+  "description": "Medooze Media Server Streamer Demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "medooze",
+    "node",
+    "webrtc",
+    "sfu",
+    "rtp",
+    "gstreamer",
+    "recorder",
+    "h264",
+    "mp4"
+  ],
+  "author": "Alex Bakoushin <alex@bakoush.in>",
+  "license": "MIT"
+}
