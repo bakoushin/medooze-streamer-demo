@@ -18,5 +18,8 @@
     "mp4"
   ],
   "author": "Alex Bakoushin <alex@bakoush.in>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "medooze-media-server": "^0.94.2"
+  }
 }
