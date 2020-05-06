@@ -23,5 +23,8 @@
     "express": "^4.17.1",
     "internal-ip": "^6.0.0",
     "medooze-media-server": "^0.94.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
