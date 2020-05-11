@@ -7,6 +7,7 @@
     "start": "node index.js",
     "dev": "nodemon --inspect index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "canary": "open -a 'Google Chrome Canary.app' --args --use-fake-device-for-media-stream 'http://127.0.0.1:3000'",
     "chromium": "chromium-browser --use-fake-device-for-media-stream 'http://127.0.0.1:3000'"
   },
   "keywords": [
