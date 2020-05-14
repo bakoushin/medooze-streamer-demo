@@ -3,6 +3,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Create loopback video stream
   const videoLoopbackElement = document.getElementById('video-loopback');
+  const recorderStart = document.getElementById('recorder-start');
+  const recorderStop = document.getElementById('recorder-stop');
 
   navigator.mediaDevices
     .getUserMedia({
@@ -38,4 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then((answer) => pc.setRemoteDescription(answer))
         .catch((err) => console.error(err));
     });
+
+  recorderStart.addEventListener('click', () => fetch('/recorder-start'));
+  recorderStop.addEventListener('click', () => fetch('/recorder-stop'));
 });
