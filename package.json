@@ -23,6 +23,10 @@
   ],
   "author": "Alex Bakoushin <alex@bakoush.in>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bakoushin/medooze-streamer-demo.git"
+  },
   "dependencies": {
     "express": "^4.17.1",
     "internal-ip": "^6.0.0",
