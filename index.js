@@ -86,7 +86,7 @@ app.get('/recorder-start', () => {
       .toString()
       .split(/\r?\n/g)
       .forEach((line) => {
-        if (line === 'New clock: GstSystemClock') {
+        if (line.indexOf('Setting pipeline to PLAYING') !== -1) {
           // Create new Streamer
           streamer = MediaServer.createStreamer();
 
