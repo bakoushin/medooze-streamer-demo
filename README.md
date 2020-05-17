@@ -1,11 +1,11 @@
-# Demo: recording audio/video streams from WebRTC using Medooze Media Server and GStreamer
+# Recording audio/video streams from WebRTC using Medooze Media Server and GStreamer or FFmpeg
 
-This demo shows how to record WebRTC video stream from the browser into an `MP4` file on the server using [Medooze Media Server](https://github.com/medooze/media-server-node) and [GStreamer](https://gstreamer.freedesktop.org/).
+This demo shows how to record WebRTC video stream from the browser into an `MP4` file on the server using [Medooze Media Server](https://github.com/medooze/media-server-node) and [GStreamer](https://gstreamer.freedesktop.org/) or [FFmpeg](https://ffmpeg.org/).
 
 Here is an overview of what is happening:
 
 ```
-Client Webcam => Browser => Medooze Media Server => GStreamer => .mp4
+Client Webcam => Browser => Medooze Media Server => GStreamer|FFmpeg => .mp4
 ```
 
 We are leveraging Medooze [Streamer](https://medooze.github.io/media-server-node/#streamer) component in order to send RTP streams for external processing.
@@ -32,8 +32,6 @@ A new file `<TIMESTAMP>.mp4` will be created in the project directory.
 
 ## GStreamer pipeline
 
-In order to mux audio and video streams from WebRTC into a `MP4` file, this demo uses GStreamer.
-
 Here is a quick explanation of GStreamer pipeline used in demo:
 
 ```
@@ -58,6 +56,34 @@ udpsrc address=127.0.0.1 port=5006 caps="application/x-rtp,clock-rate=90000,payl
 # Get H264 video from RTP
 video. ! queue ! rtpjitterbuffer ! rtph264depay ! h264parse ! mux.
 ```
+
+## FFmpeg pipeline
+
+Here is a quick explanation of FFmpeg pipeline used in demo:
+
+```
+ffmpeg
+-protocol_whitelist file,rtp,udp # Enable input from file, RTP, UDP
+-i input.sdp                     # Read SDP file with RTP connection details. See example below.
+-c:a aac                         # Convert incoming audio to AAC
+-c:v copy                        # Copy incoming video with no changes
+-f mp4                           # Output to MP4
+-y                               # Non-interactive mode (always `yes`)
+video.mp4                        # Output file name
+```
+
+`input.sdp`
+
+```
+c=IN IP4 127.0.0.1
+m=audio 5004 RTP 109
+a=rtpmap:109 opus/48000/2
+m=video 5006 RTP 96
+a=rtpmap:96 H264/90000
+a=fmtp:96 packetization-mode=1
+```
+
+> In the actual code the SDP is created on the fly and is piped to the FFmpeg process via stdin.
 
 ## License
 
