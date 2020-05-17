@@ -3,8 +3,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Create loopback video stream
   const videoLoopbackElement = document.getElementById('video-loopback');
-  const recorderStart = document.getElementById('recorder-start');
-  const recorderStop = document.getElementById('recorder-stop');
+  const gstreamerStart = document.getElementById('gstreamer-start');
+  const gstreamerStop = document.getElementById('gstreamer-stop');
+  const ffmpegStart = document.getElementById('ffmpeg-start');
+  const ffmpegStop = document.getElementById('ffmpeg-stop');
 
   navigator.mediaDevices
     .getUserMedia({
@@ -41,6 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch((err) => console.error(err));
     });
 
-  recorderStart.addEventListener('click', () => fetch('/recorder-start'));
-  recorderStop.addEventListener('click', () => fetch('/recorder-stop'));
+  gstreamerStart.addEventListener('click', () => fetch('/gstreamer-start'));
+  gstreamerStop.addEventListener('click', () => fetch('/gstreamer-stop'));
+  ffmpegStart.addEventListener('click', () => fetch('/ffmpeg-start'));
+  ffmpegStop.addEventListener('click', () => fetch('/ffmpeg-stop'));
 });

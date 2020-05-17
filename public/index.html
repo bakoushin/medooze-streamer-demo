@@ -4,14 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Medooze Media Server Streamer Demo</title>
+    <title>Medooze Media Server RTP Recording Demo</title>
   </head>
   <body>
     <div><video id="video-loopback" autoplay muted playsinline></video></div>
     <div>
       Record using GStreamer:
-      <button id="recorder-start">Record</button>
-      <button id="recorder-stop">Stop</button>
+      <button id="gstreamer-start">Record</button>
+      <button id="gstreamer-stop">Stop</button>
+    </div>
+    <div>
+      Record using FFMpeg:
+      <button id="ffmpeg-start">Record</button>
+      <button id="ffmpeg-stop">Stop</button>
     </div>
     <script src="script.js"></script>
   </body>
