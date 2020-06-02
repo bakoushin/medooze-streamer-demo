@@ -28,12 +28,12 @@
     "url": "https://github.com/bakoushin/medooze-streamer-demo.git"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "internal-ip": "^6.0.0",
-    "medooze-media-server": "^0.94.2",
-    "semantic-sdp": "^3.18.2"
+    "express": "4.17.1",
+    "internal-ip": "6.0.0",
+    "medooze-media-server": "0.94.8",
+    "semantic-sdp": "3.18.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "2.0.4"
   }
 }
