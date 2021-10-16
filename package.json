@@ -29,11 +29,11 @@
   },
   "dependencies": {
     "express": "4.17.1",
-    "internal-ip": "6.0.0",
-    "medooze-media-server": "0.94.8",
-    "semantic-sdp": "3.18.2"
+    "internal-ip": "6.2.0",
+    "medooze-media-server": "0.112.4",
+    "semantic-sdp": "3.22.0"
   },
   "devDependencies": {
-    "nodemon": "2.0.4"
+    "nodemon": "2.0.13"
   }
 }
