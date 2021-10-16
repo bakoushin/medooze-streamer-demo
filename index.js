@@ -3,7 +3,6 @@ const MediaServer = require('medooze-media-server');
 const { SDPInfo, MediaInfo, CodecInfo } = require('semantic-sdp');
 const internalIp = require('internal-ip');
 const express = require('express');
-const bodyParser = require('body-parser');
 
 // Init MediaServer
 const ip = process.env.IP_ADDRESS || internalIp.v4.sync();
@@ -88,7 +87,7 @@ const startStreamer = () => {
 // Init HTTP server
 const app = express();
 app.use(express.static('public'));
-app.use(bodyParser.text());
+app.use(express.text());
 
 // Init WebRTC loopback connection
 app.post('/connect', (req, res) => {
