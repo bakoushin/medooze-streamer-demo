@@ -143,7 +143,7 @@ app.get('/gstreamer-start', (req, res) => {
       .join(' ')
       .split(' ')
   );
-  console.log('GStreamer started');
+  console.log('GStreamer started. Waiting for pipeline initialization...');
 
   // Wait for GStreamer to initialize and start Streamer
   gstreamerProcess.stdout.on('data', (chunk) => {
