@@ -91,7 +91,7 @@ app.use(express.text());
 
 // Init WebRTC loopback connection
 app.post('/connect', (req, res) => {
-  const offer = SDPInfo.process(req.body);
+  const offer = SDPInfo.parse(req.body);
 
   const transport = endpoint.createTransport(offer);
   transport.setRemoteProperties(offer);
