@@ -28,7 +28,7 @@
     "url": "https://github.com/bakoushin/medooze-streamer-demo.git"
   },
   "dependencies": {
-    "express": "4.17.1",
+    "express": "4.17.3",
     "internal-ip": "6.2.0",
     "medooze-media-server": "0.112.4",
     "semantic-sdp": "3.22.0"
